@@ -1,3 +1,9 @@
-<p>
-  sign-in works!
-</p>
+<ly-grid container [spacing]="16">
+  <ly-grid item [col]="6">
+    <p>Login:</p>
+    <app-generic-input></app-generic-input>
+    <p>Password:</p>
+    <app-generic-input></app-generic-input>
+    <button ly-button raised>Sign In</button>
+  </ly-grid>
+</ly-grid>
