@@ -1,9 +1,36 @@
-<ly-grid container [spacing]="16">
-  <ly-grid item [col]="6">
-    <p>Login:</p>
-    <app-generic-input></app-generic-input>
-    <p>Password:</p>
-    <app-generic-input></app-generic-input>
-    <button ly-button raised>Sign In</button>
-  </ly-grid>
-</ly-grid>
+  <div class="sign-in">
+    <form [formGroup]="profileForm"
+          (ngSubmit)="onSubmit()"
+          [className]="classes.container"
+    >
+      <ly-field appearance="filled" fullWidth>
+        <input lyNativeControl
+               type="text"
+               placeholder="Username or email address"
+               formControlName="username"
+        >
+        <ly-hint>Hint</ly-hint>
+        <ly-error *ngIf="username.hasError('minlength')">Min 5 characters</ly-error>
+        <ly-error *ngIf="username.hasError('maxlength')">Max 16 characters</ly-error>
+        <ly-error *ngIf="username.hasError('required')">Required</ly-error>
+        <ly-hint [align]="'after'">{{ username.value?.length || 0 }}/32</ly-hint>
+      </ly-field>
+
+      <ly-field appearance="filled" fullWidth>
+        <input lyNativeControl
+               type="password"
+               placeholder="Password"
+               formControlName="password"
+        >
+        <ly-hint>Hint</ly-hint>
+        <ly-error>Required</ly-error>
+      </ly-field>
+
+      <button ly-button
+              bg="primary"
+              raised
+              type="submit"
+              size="large"
+      >Sign in</button>
+    </form>
+  </div>

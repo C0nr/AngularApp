@@ -1,6 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="main-view">
-  <div class=""></div>
-  <app-sign-in></app-sign-in>
-</div>
+  <ly-grid class="main-view" container [spacing]="0">
+    <ly-grid item [col]="8" class="map-view">
+      <div id="map"></div>
+    </ly-grid>
+    <ly-grid item [col]="4">
+      <app-sign-in></app-sign-in>
+    </ly-grid>
+  </ly-grid>
 <router-outlet></router-outlet>

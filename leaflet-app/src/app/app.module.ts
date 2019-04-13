@@ -23,6 +23,9 @@ import { LyResizingCroppingImageModule } from '@alyle/ui/resizing-cropping-image
 import { CommonModule } from '@angular/common';
 import { LyCommonModule } from '@alyle/ui';
 import { LyGridModule } from '@alyle/ui/grid';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LyFieldModule } from '@alyle/ui/field';
+import { LySelectModule } from '@alyle/ui/select';
 
 /** Import themes */
 import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
@@ -44,12 +47,16 @@ import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
     LyResizingCroppingImageModule,
     CommonModule,
     LyCommonModule,
-    LyGridModule
+    LyGridModule,
+    ReactiveFormsModule,
+    LyFieldModule,
+    LySelectModule
   ],
   providers: [
     { provide: LY_THEME, useClass: MinimaLight, multi: true }, // name: `minima-light`
     { provide: LY_THEME, useClass: MinimaDark, multi: true } // name: `minima-dark`
   ],
+  exports: [SignInComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
