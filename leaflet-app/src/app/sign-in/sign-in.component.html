@@ -32,5 +32,15 @@
               type="submit"
               size="large"
       >Sign in</button>
+      <nav>
+        <p>{{createAccount}}
+          <a routerLink="/registration">{{registrationPage}}</a>
+        </p>
+        <p>{{back}}
+          <a ly-button appearance="fab" raised bg="primary" routerLink="/">
+            <ly-icon>arrow_back</ly-icon>
+          </a>
+        </p>
+      </nav>
     </form>
   </div>

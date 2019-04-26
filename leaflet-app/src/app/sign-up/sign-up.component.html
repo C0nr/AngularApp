@@ -1,2 +1,69 @@
 <div class="sign-in">
+  <form [formGroup]="profileForm"
+        (ngSubmit)="onSubmit()"
+        [className]="classes.container"
+  >
+    <ly-field appearance="filled" fullWidth>
+      <input lyNativeControl
+             type="text"
+             placeholder="Username"
+             formControlName="username"
+      >
+      <ly-hint>Hint</ly-hint>
+      <ly-error *ngIf="username.hasError('minlength')">Min 5 characters</ly-error>
+      <ly-error *ngIf="username.hasError('maxlength')">Max 32 characters</ly-error>
+      <ly-error *ngIf="username.hasError('required')">Required</ly-error>
+      <ly-hint [align]="'after'">{{ username.value?.length || 0 }}/32</ly-hint>
+    </ly-field>
+
+    <ly-field appearance="filled" fullWidth>
+      <input lyNativeControl
+             type="text"
+             placeholder="Email address"
+             formControlName="email"
+      >
+      <ly-hint>Hint</ly-hint>
+      <ly-error *ngIf="username.hasError('minlength')">Min 5 characters</ly-error>
+      <ly-error *ngIf="username.hasError('maxlength')">Max 64 characters</ly-error>
+      <ly-error *ngIf="username.hasError('required')">Required</ly-error>
+      <ly-hint [align]="'after'">{{ username.value?.length || 0 }}/32</ly-hint>
+    </ly-field>
+
+    <ly-field appearance="filled" fullWidth>
+      <input lyNativeControl
+             type="password"
+             placeholder="Password"
+             formControlName="password"
+      >
+      <ly-hint>Hint</ly-hint>
+      <ly-error>Required</ly-error>
+    </ly-field>
+
+    <ly-field appearance="filled" fullWidth>
+      <input lyNativeControl
+             type="password"
+             placeholder="Retype Password"
+             formControlName="password"
+      >
+      <ly-hint>Hint</ly-hint>
+      <ly-error>Required</ly-error>
+    </ly-field>
+
+    <button ly-button
+            bg="primary"
+            raised
+            type="submit"
+            size="large"
+    >Sign up</button>
+    <nav>
+      <p>{{createAccount}}
+        <a routerLink="/login">{{loginPage}}</a>
+      </p>
+      <p>{{back}}
+        <a ly-button appearance="fab" raised bg="primary" routerLink="/">
+          <ly-icon>arrow_back</ly-icon>
+        </a>
+      </p>
+    </nav>
+  </form>
 </div>

@@ -21,6 +21,9 @@ const STYLES = (theme: ThemeVariables) => ({
 })
 export class SignInComponent implements OnInit {
   readonly classes = this.theme.addStyleSheet(STYLES);
+  createAccount = "If you don't have account please go to the";
+  registrationPage = "Registration page";
+  back = "Back to Menu";
 
   profileForm = new FormGroup({
     username: new FormControl('', [
