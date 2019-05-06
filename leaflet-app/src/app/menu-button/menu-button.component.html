@@ -1,6 +1,11 @@
 <ng-container *ngFor="let item of menu">
-<button class="menu-button" ly-button appearance="fab" raised bg="primary">
-<ly-icon>{{item.icon}}</ly-icon>
-<p>{{item.title}}</p>
-</button>
+  <a
+    [routerLink]="['/search', item.title | lowercase]"
+    class="menu-button"
+    ly-button appearance="fab"
+    raised bg="primary"
+  >
+    <ly-icon>{{item.icon}}</ly-icon>
+    <p>{{item.title}}</p>
+  </a>
 </ng-container>

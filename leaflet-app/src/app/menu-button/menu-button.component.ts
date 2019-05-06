@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-menu-button',
   templateUrl: './menu-button.component.html',
-  styleUrls: ['./menu-button.component.scss']
+  styleUrls: ['./menu-button.component.scss'],
 })
 export class MenuButtonComponent implements OnInit {
   menu = [{
@@ -21,11 +21,10 @@ export class MenuButtonComponent implements OnInit {
     {
       title: 'Parks',
       icon: 'panorama'
-    }];
+  }];
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

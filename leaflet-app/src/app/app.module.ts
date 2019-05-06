@@ -27,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LyFieldModule } from '@alyle/ui/field';
 import { LySelectModule } from '@alyle/ui/select';
 import { LyTypographyModule } from '@alyle/ui/typography';
+import { LyCardModule } from '@alyle/ui/card';
 
 /** Import themes */
 import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
@@ -61,7 +62,8 @@ import { SearchBoxComponent } from './search-box/search-box.component';
     LySelectModule,
     LyIconModule,
     HttpClientModule,
-    LyTypographyModule
+    LyTypographyModule,
+    LyCardModule
   ],
   providers: [
     { provide: LY_THEME, useClass: MinimaLight, multi: true }, // name: `minima-light`

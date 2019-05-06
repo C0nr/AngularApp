@@ -1,7 +1,7 @@
 <div class="sign-in">
   <div [className]="classes.container">
   <h1>Choose your favourite places</h1>
-    <app-menu-button></app-menu-button>
+    <app-menu-button (eventPage)="selected($event)"></app-menu-button>
     <nav>
       <p>
         {{login}}
