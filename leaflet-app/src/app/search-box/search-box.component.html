@@ -1,0 +1,28 @@
+<div class="menu-view">
+    <ng-container *ngFor="let locations of properList">
+      <ly-card>
+        <ly-card-media bgImg="{{locations.photo}}" title="locations.name"></ly-card-media>
+        <ly-card-content>
+          <h2 lyTyp="headline" gutterBottom>{{locations.name}}</h2>
+          <p lyTyp="body1">
+            {{locations.description}}
+          </p>
+        </ly-card-content>
+        <ly-card-actions disableActionSpacing>
+          <button ly-button appearance="icon" color="accent">
+            <ly-icon>favorite</ly-icon>
+          </button>
+          <button ly-button appearance="icon">
+            <ly-icon>share</ly-icon>
+          </button>
+        </ly-card-actions>
+      </ly-card>
+    </ng-container>
+  <nav>
+    <p>Back to main menu
+      <a ly-button appearance="fab" raised bg="primary" routerLink="/">
+        <ly-icon>arrow_back</ly-icon>
+      </a>
+    </p>
+  </nav>
+</div>
